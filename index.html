@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es-es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Analisis de Denuncias CABA</title>
+
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+	<style>
+	       #map {top:0; bottom:0;}
+         .bar {fill: #5f89ad;}
+         .axis {font-size: 10px;}
+         .axis path,
+         .axis line {fill: none;display: none;}
+         .label {font-size: 11px;}
+
+         a.boton {cursor:'hand'}
+
+            .mapboxgl-popup {
+
+			}
+
+
+			.mapboxgl-popup-content {
+			  font-family: 'Open Sans', sans-serif;
+
+			}
+	</style>
+	<link href="./static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  </head>
+   <script src="./static/js/jquery-1.12.4.min.js"></script> <!-- Importante llamar antes a jQuery para que funcione bootstrap.min.js   -->
+   <script src="./static/js/bootstrap.min.js"></script> <!-- Llamamos al JavaScript de Bootstrap -->
+   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+   <script src="./static/js/Chart.min.js"></script>
+   <script src="./static/js/utils.js"></script>
+   <script>
+
+        var popup;
+        var year_indx=2016;
+
+        function fire_layer_click(capa){
+
+  		  var x=0;
+  		  var y=0;
+         
+		 try {
+			  popup.remove();
+			}
+		 catch(error) {
+			 
+          }
+
+  		  for (i=0;i!=dBarrios.length ;i++ )
+        {
+          if(dBarrios[i][3]==capa){
+  				  x=parseFloat(dBarrios[i][0]);
+  			      y=parseFloat(dBarrios[i][1]);
+  				  zoom=dBarrios[i][2];
+
+  				  var l_html='<b3><b>'+capa+'</b><b3><br>';
+				     //l_html=l_html + 'Calificacion positiva:<br>';
+					 //l_html=l_html + 'Calificacion Negativa:<br>';
+					 l_html=l_html + 'Visualizar datos de los incidentes en el mapa<br>';
+  		             l_html=l_html + '<a class="btn btn-primary" href="#" role="button" onClick=verMapa('+i+')>Ver</a>';
+
+  					   popup = new mapboxgl.Popup({closeOnClick: false })
+  											.setLngLat([x,y])
+  											.setHTML(l_html)
+  											.addTo(map);
+
+
+                       popup.on('close', function(e) {
+                           map.flyTo({center:center,zoom: 10.5});
+                       })
+  			  }
+  		  }
+
+  		   if(x!=0){
+  			 map.flyTo({center:[x, y],zoom: zoom});
+  		   }
+  		}
+
+          function getYear_index(){
+  		  oSelect=document.getElementById("oSelectTotales");
+            l_value=oSelect[oSelect.selectedIndex].value.split(',')[0];
+  		  return l_value;
+  		}
+
+  		function getValuesDen(){
+
+
+		}
+
+
+		function verMapa(index){
+          
+          url="./static/geolocalizacion.html?p_BARRIO="+dBarrios[index][3] +'&p_YEAR='+year_indx;
+  		  location.href=url;
+  		}
+
+     function changeYear(year){
+       year_indx=year;
+	   window.myHorizontalBar.destroy();
+       makeChart(year);
+
+     }
+
+	 function goTopics(){
+	   location.href='./static/topics.html';
+	 }
+
+	 function goProphet(){
+	    location.href='./static/temp-plot.html';
+
+	 }
+
+  </script>
+  <body>
+   <div id="" class="container">
+	   <nav class="navbar navbar-default">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">Denuncias</a>
+			</div>
+
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav navbar-nav">
+
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analisis Totales<span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#" class="active" onclick="changeYear(-1)">Cantidad Totales</a></li>
+					<li role="separator" class="divider"></li>
+          <li><a href="#" onclick="changeYear(2016)">Cantidad de denuncias 2016</a></li>
+          <li><a href="#" onclick="changeYear(2017)">Cantidad de denuncias 2017</a></li>
+          <li><a href="#" onclick="changeYear(2018)">Cantidad de denuncias 2018</a></li>
+          <li><a href="#" onclick="changeYear(2019)">Cantidad de denuncias 2019</a></li>
+				  <li role="separator" class="divider"></li>
+                   <li><a href="#" onclick="goProphet()">Totales con Prophet</a></li>
+				  </ul> <!-- class="active"  -->
+				</li>
+				<li ><a onclick="goTopics()">Analisis de Topicos <span class="sr-only">(current)</span></a></li>
+				<li><a href="#">Analisis Geo</a></li>
+			  </ul>
+
+			</div><!-- /.navbar-collapse  -->
+		  </div><!-- /.container-fluid  -->
+		</nav>
+
+
+			<!--   <canvas id="canvas" style="width:500px;height: 630px;"></canvas> -->
+
+       <div class="panel panel-default">
+         <div class="panel-body" style="height:700px">
+           <div id='map' style="width:500px;height:550px"></div>
+		      <div id="container_" style=" position: absolute; top: 100px; left: 700px;">
+		                            <canvas id="canvas" style="width:500px;height: 630px;"></canvas>
+	                         </div>
+
+         </div>
+       </div>
+
+	 </div> <!-- /container -->
+
+	<script src="./static/js/conf_map.js"></script>
+  <script src="./static/js/conf_bars.js"></script>
+
+  </body>
+</html>

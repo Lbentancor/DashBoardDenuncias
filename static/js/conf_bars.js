@@ -1,0 +1,1190 @@
+        var data_total=[{
+                  "name": "AGRONOMIA",
+                   "value": 0}
+                    ,{
+                  "name": "ALMAGRO",
+                   "value": 0}
+                    ,{
+                  "name": "BALVANERA",
+                   "value": 0}
+                    ,{
+                  "name": "BARRACAS",
+                   "value": 0}
+                    ,{
+                  "name": "BELGRANO",
+                   "value": 0}
+                    ,{
+                  "name": "BOCA",
+                   "value": 0}
+                    ,{
+                  "name": "BOEDO",
+                   "value": 0}
+                    ,{
+                  "name": "CABALLITO",
+                   "value": 0}
+                    ,{
+                  "name": "CHACARITA",
+                   "value": 0}
+                    ,{
+                  "name": "COGHLAN",
+                   "value": 0}
+                    ,{
+                  "name": "COLEGIALES",
+                   "value": 0}
+                    ,{
+                  "name": "CONSTITUCION",
+                   "value": 0}
+                    ,{
+                  "name": "FLORES",
+                   "value": 0}
+                    ,{
+                  "name": "FLORESTA",
+                   "value": 0}
+                    ,{
+                  "name": "LINIERS",
+                   "value": 0}
+                    ,{
+                  "name": "MATADEROS",
+                   "value": 0}
+                    ,{
+                  "name": "MONSERRAT",
+                   "value": 0}
+                    ,{
+                  "name": "MONTE CASTRO",
+                   "value": 0}
+                    ,{
+                  "name": "NUEVA POMPEYA",
+                   "value": 0}
+                    ,{
+                  "name": "NUNEZ",
+                   "value": 0}
+                    ,{
+                  "name": "PALERMO",
+                   "value": 0}
+                    ,{
+                  "name": "PARQUE AVELLANEDA",
+                   "value": 0}
+                    ,{
+                  "name": "PARQUE CHACABUCO",
+                   "value": 0}
+                    ,{
+                  "name": "PARQUE CHAS",
+                   "value": 0}
+                    ,{
+                  "name": "PARQUE PATRICIOS",
+                   "value": 0}
+                    ,{
+                  "name": "PATERNAL",
+                   "value": 0}
+                    ,{
+                  "name": "PUERTO MADERO",
+                   "value": 0}
+                    ,{
+                  "name": "RECOLETA",
+                   "value": 0}
+                    ,{
+                  "name": "RETIRO",
+                   "value": 0}
+                    ,{
+                  "name": "SAAVEDRA",
+                   "value": 0}
+                    ,{
+                  "name": "SAN CRISTOBAL",
+                   "value": 0}
+                    ,{
+                  "name": "SAN NICOLAS",
+                   "value": 0}
+                    ,{
+                  "name": "SAN TELMO",
+                   "value": 0}
+                    ,{
+                  "name": "VELEZ SARSFIELD",
+                   "value": 0}
+                    ,{
+                  "name": "VERSALLES",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA CRESPO",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA DEL PARQUE",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA DEVOTO",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA GRAL. MITRE",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA LUGANO",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA LURO",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA ORTUZAR",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA PUEYRREDON",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA REAL",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA RIACHUELO",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA SANTA RITA",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA SOLDATI",
+                   "value": 0}
+                    ,{
+                  "name": "VILLA URQUIZA",
+                   "value": 0}];
+
+
+		 data_barrios=[{
+                   "year":2016,
+                   "name": "AGRONOMIA",
+                   "total": 101}
+                    ,{
+                   "year":2016,
+                   "name": "ALMAGRO",
+                   "total": 777}
+                    ,{
+                   "year":2016,
+                   "name": "BALVANERA",
+                   "total": 1021}
+                    ,{
+                   "year":2016,
+                   "name": "BARRACAS",
+                   "total": 359}
+                    ,{
+                   "year":2016,
+                   "name": "BELGRANO",
+                   "total": 659}
+                    ,{
+                   "year":2016,
+                   "name": "BOCA",
+                   "total": 177}
+                    ,{
+                   "year":2016,
+                   "name": "BOEDO",
+                   "total": 274}
+                    ,{
+                   "year":2016,
+                   "name": "CABALLITO",
+                   "total": 1022}
+                    ,{
+                   "year":2016,
+                   "name": "CHACARITA",
+                   "total": 179}
+                    ,{
+                   "year":2016,
+                   "name": "COGHLAN",
+                   "total": 114}
+                    ,{
+                   "year":2016,
+                   "name": "COLEGIALES",
+                   "total": 308}
+                    ,{
+                   "year":2016,
+                   "name": "CONSTITUCION",
+                   "total": 309}
+                    ,{
+                   "year":2016,
+                   "name": "FLORES",
+                   "total": 813}
+                    ,{
+                   "year":2016,
+                   "name": "FLORESTA",
+                   "total": 334}
+                    ,{
+                   "year":2016,
+                   "name": "LINIERS",
+                   "total": 259}
+                    ,{
+                   "year":2016,
+                   "name": "MATADEROS",
+                   "total": 416}
+                    ,{
+                   "year":2016,
+                   "name": "MONSERRAT",
+                   "total": 461}
+                    ,{
+                   "year":2016,
+                   "name": "MONTE CASTRO",
+                   "total": 205}
+                    ,{
+                   "year":2016,
+                   "name": "NUEVA POMPEYA",
+                   "total": 225}
+                    ,{
+                   "year":2016,
+                   "name": "NUNEZ",
+                   "total": 313}
+                    ,{
+                   "year":2016,
+                   "name": "PALERMO",
+                   "total": 1849}
+                    ,{
+                   "year":2016,
+                   "name": "PARQUE AVELLANEDA",
+                   "total": 312}
+                    ,{
+                   "year":2016,
+                   "name": "PARQUE CHACABUCO",
+                   "total": 337}
+                    ,{
+                   "year":2016,
+                   "name": "PARQUE CHAS",
+                   "total": 138}
+                    ,{
+                   "year":2016,
+                   "name": "PARQUE PATRICIOS",
+                   "total": 223}
+                    ,{
+                   "year":2016,
+                   "name": "PATERNAL",
+                   "total": 145}
+                    ,{
+                   "year":2016,
+                   "name": "PUERTO MADERO",
+                   "total": 58}
+                    ,{
+                   "year":2016,
+                   "name": "RECOLETA",
+                   "total": 776}
+                    ,{
+                   "year":2016,
+                   "name": "RETIRO",
+                   "total": 287}
+                    ,{
+                   "year":2016,
+                   "name": "SAAVEDRA",
+                   "total": 270}
+                    ,{
+                   "year":2016,
+                   "name": "SAN CRISTOBAL",
+                   "total": 246}
+                    ,{
+                   "year":2016,
+                   "name": "SAN NICOLAS",
+                   "total": 490}
+                    ,{
+                   "year":2016,
+                   "name": "SAN TELMO",
+                   "total": 158}
+                    ,{
+                   "year":2016,
+                   "name": "VELEZ SARSFIELD",
+                   "total": 174}
+                    ,{
+                   "year":2016,
+                   "name": "VERSALLES",
+                   "total": 81}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA CRESPO",
+                   "total": 632}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA DEL PARQUE",
+                   "total": 263}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA DEVOTO",
+                   "total": 432}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA GRAL. MITRE",
+                   "total": 221}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA LUGANO",
+                   "total": 282}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA LURO",
+                   "total": 248}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA ORTUZAR",
+                   "total": 184}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA PUEYRREDON",
+                   "total": 225}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA REAL",
+                   "total": 77}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA RIACHUELO",
+                   "total": 62}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA SANTA RITA",
+                   "total": 230}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA SOLDATI",
+                   "total": 78}
+                    ,{
+                   "year":2016,
+                   "name": "VILLA URQUIZA",
+                   "total": 516}
+                    ,{
+                   "year":2017,
+                   "name": "AGRONOMIA",
+                   "total": 127}
+                    ,{
+                   "year":2017,
+                   "name": "ALMAGRO",
+                   "total": 748}
+                    ,{
+                   "year":2017,
+                   "name": "BALVANERA",
+                   "total": 1044}
+                    ,{
+                   "year":2017,
+                   "name": "BARRACAS",
+                   "total": 319}
+                    ,{
+                   "year":2017,
+                   "name": "BELGRANO",
+                   "total": 738}
+                    ,{
+                   "year":2017,
+                   "name": "BOCA",
+                   "total": 146}
+                    ,{
+                   "year":2017,
+                   "name": "BOEDO",
+                   "total": 302}
+                    ,{
+                   "year":2017,
+                   "name": "CABALLITO",
+                   "total": 1078}
+                    ,{
+                   "year":2017,
+                   "name": "CHACARITA",
+                   "total": 189}
+                    ,{
+                   "year":2017,
+                   "name": "COGHLAN",
+                   "total": 116}
+                    ,{
+                   "year":2017,
+                   "name": "COLEGIALES",
+                   "total": 322}
+                    ,{
+                   "year":2017,
+                   "name": "CONSTITUCION",
+                   "total": 317}
+                    ,{
+                   "year":2017,
+                   "name": "FLORES",
+                   "total": 880}
+                    ,{
+                   "year":2017,
+                   "name": "FLORESTA",
+                   "total": 353}
+                    ,{
+                   "year":2017,
+                   "name": "LINIERS",
+                   "total": 328}
+                    ,{
+                   "year":2017,
+                   "name": "MATADEROS",
+                   "total": 333}
+                    ,{
+                   "year":2017,
+                   "name": "MONSERRAT",
+                   "total": 537}
+                    ,{
+                   "year":2017,
+                   "name": "MONTE CASTRO",
+                   "total": 180}
+                    ,{
+                   "year":2017,
+                   "name": "NUEVA POMPEYA",
+                   "total": 238}
+                    ,{
+                   "year":2017,
+                   "name": "NUNEZ",
+                   "total": 312}
+                    ,{
+                   "year":2017,
+                   "name": "PALERMO",
+                   "total": 1779}
+                    ,{
+                   "year":2017,
+                   "name": "PARQUE AVELLANEDA",
+                   "total": 306}
+                    ,{
+                   "year":2017,
+                   "name": "PARQUE CHACABUCO",
+                   "total": 327}
+                    ,{
+                   "year":2017,
+                   "name": "PARQUE CHAS",
+                   "total": 143}
+                    ,{
+                   "year":2017,
+                   "name": "PARQUE PATRICIOS",
+                   "total": 185}
+                    ,{
+                   "year":2017,
+                   "name": "PATERNAL",
+                   "total": 120}
+                    ,{
+                   "year":2017,
+                   "name": "PUERTO MADERO",
+                   "total": 48}
+                    ,{
+                   "year":2017,
+                   "name": "RECOLETA",
+                   "total": 872}
+                    ,{
+                   "year":2017,
+                   "name": "RETIRO",
+                   "total": 252}
+                    ,{
+                   "year":2017,
+                   "name": "SAAVEDRA",
+                   "total": 306}
+                    ,{
+                   "year":2017,
+                   "name": "SAN CRISTOBAL",
+                   "total": 260}
+                    ,{
+                   "year":2017,
+                   "name": "SAN NICOLAS",
+                   "total": 419}
+                    ,{
+                   "year":2017,
+                   "name": "SAN TELMO",
+                   "total": 197}
+                    ,{
+                   "year":2017,
+                   "name": "VELEZ SARSFIELD",
+                   "total": 184}
+                    ,{
+                   "year":2017,
+                   "name": "VERSALLES",
+                   "total": 89}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA CRESPO",
+                   "total": 542}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA DEL PARQUE",
+                   "total": 305}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA DEVOTO",
+                   "total": 445}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA GRAL. MITRE",
+                   "total": 237}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA LUGANO",
+                   "total": 279}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA LURO",
+                   "total": 187}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA ORTUZAR",
+                   "total": 168}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA PUEYRREDON",
+                   "total": 259}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA REAL",
+                   "total": 59}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA RIACHUELO",
+                   "total": 98}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA SANTA RITA",
+                   "total": 232}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA SOLDATI",
+                   "total": 70}
+                    ,{
+                   "year":2017,
+                   "name": "VILLA URQUIZA",
+                   "total": 568}
+                    ,{
+                   "year":2018,
+                   "name": "AGRONOMIA",
+                   "total": 131}
+                    ,{
+                   "year":2018,
+                   "name": "ALMAGRO",
+                   "total": 957}
+                    ,{
+                   "year":2018,
+                   "name": "BALVANERA",
+                   "total": 1216}
+                    ,{
+                   "year":2018,
+                   "name": "BARRACAS",
+                   "total": 465}
+                    ,{
+                   "year":2018,
+                   "name": "BELGRANO",
+                   "total": 988}
+                    ,{
+                   "year":2018,
+                   "name": "BOCA",
+                   "total": 217}
+                    ,{
+                   "year":2018,
+                   "name": "BOEDO",
+                   "total": 313}
+                    ,{
+                   "year":2018,
+                   "name": "CABALLITO",
+                   "total": 1378}
+                    ,{
+                   "year":2018,
+                   "name": "CHACARITA",
+                   "total": 281}
+                    ,{
+                   "year":2018,
+                   "name": "COGHLAN",
+                   "total": 194}
+                    ,{
+                   "year":2018,
+                   "name": "COLEGIALES",
+                   "total": 496}
+                    ,{
+                   "year":2018,
+                   "name": "CONSTITUCION",
+                   "total": 388}
+                    ,{
+                   "year":2018,
+                   "name": "FLORES",
+                   "total": 1108}
+                    ,{
+                   "year":2018,
+                   "name": "FLORESTA",
+                   "total": 453}
+                    ,{
+                   "year":2018,
+                   "name": "LINIERS",
+                   "total": 452}
+                    ,{
+                   "year":2018,
+                   "name": "MATADEROS",
+                   "total": 548}
+                    ,{
+                   "year":2018,
+                   "name": "MONSERRAT",
+                   "total": 554}
+                    ,{
+                   "year":2018,
+                   "name": "MONTE CASTRO",
+                   "total": 229}
+                    ,{
+                   "year":2018,
+                   "name": "NUEVA POMPEYA",
+                   "total": 280}
+                    ,{
+                   "year":2018,
+                   "name": "NUNEZ",
+                   "total": 437}
+                    ,{
+                   "year":2018,
+                   "name": "PALERMO",
+                   "total": 2401}
+                    ,{
+                   "year":2018,
+                   "name": "PARQUE AVELLANEDA",
+                   "total": 364}
+                    ,{
+                   "year":2018,
+                   "name": "PARQUE CHACABUCO",
+                   "total": 367}
+                    ,{
+                   "year":2018,
+                   "name": "PARQUE CHAS",
+                   "total": 143}
+                    ,{
+                   "year":2018,
+                   "name": "PARQUE PATRICIOS",
+                   "total": 281}
+                    ,{
+                   "year":2018,
+                   "name": "PATERNAL",
+                   "total": 166}
+                    ,{
+                   "year":2018,
+                   "name": "PUERTO MADERO",
+                   "total": 45}
+                    ,{
+                   "year":2018,
+                   "name": "RECOLETA",
+                   "total": 1084}
+                    ,{
+                   "year":2018,
+                   "name": "RETIRO",
+                   "total": 298}
+                    ,{
+                   "year":2018,
+                   "name": "SAAVEDRA",
+                   "total": 477}
+                    ,{
+                   "year":2018,
+                   "name": "SAN CRISTOBAL",
+                   "total": 373}
+                    ,{
+                   "year":2018,
+                   "name": "SAN NICOLAS",
+                   "total": 492}
+                    ,{
+                   "year":2018,
+                   "name": "SAN TELMO",
+                   "total": 358}
+                    ,{
+                   "year":2018,
+                   "name": "VELEZ SARSFIELD",
+                   "total": 251}
+                    ,{
+                   "year":2018,
+                   "name": "VERSALLES",
+                   "total": 98}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA CRESPO",
+                   "total": 798}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA DEL PARQUE",
+                   "total": 407}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA DEVOTO",
+                   "total": 677}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA GRAL. MITRE",
+                   "total": 266}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA LUGANO",
+                   "total": 418}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA LURO",
+                   "total": 244}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA ORTUZAR",
+                   "total": 253}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA PUEYRREDON",
+                   "total": 317}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA REAL",
+                   "total": 51}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA RIACHUELO",
+                   "total": 89}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA SANTA RITA",
+                   "total": 326}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA SOLDATI",
+                   "total": 85}
+                    ,{
+                   "year":2018,
+                   "name": "VILLA URQUIZA",
+                   "total": 849}
+                    ,{
+                   "year":2019,
+                   "name": "AGRONOMIA",
+                   "total": 76}
+                    ,{
+                   "year":2019,
+                   "name": "ALMAGRO",
+                   "total": 591}
+                    ,{
+                   "year":2019,
+                   "name": "BALVANERA",
+                   "total": 706}
+                    ,{
+                   "year":2019,
+                   "name": "BARRACAS",
+                   "total": 288}
+                    ,{
+                   "year":2019,
+                   "name": "BELGRANO",
+                   "total": 654}
+                    ,{
+                   "year":2019,
+                   "name": "BOCA",
+                   "total": 149}
+                    ,{
+                   "year":2019,
+                   "name": "BOEDO",
+                   "total": 160}
+                    ,{
+                   "year":2019,
+                   "name": "CABALLITO",
+                   "total": 696}
+                    ,{
+                   "year":2019,
+                   "name": "CHACARITA",
+                   "total": 190}
+                    ,{
+                   "year":2019,
+                   "name": "COGHLAN",
+                   "total": 101}
+                    ,{
+                   "year":2019,
+                   "name": "COLEGIALES",
+                   "total": 257}
+                    ,{
+                   "year":2019,
+                   "name": "CONSTITUCION",
+                   "total": 289}
+                    ,{
+                   "year":2019,
+                   "name": "FLORES",
+                   "total": 658}
+                    ,{
+                   "year":2019,
+                   "name": "FLORESTA",
+                   "total": 251}
+                    ,{
+                   "year":2019,
+                   "name": "LINIERS",
+                   "total": 265}
+                    ,{
+                   "year":2019,
+                   "name": "MATADEROS",
+                   "total": 285}
+                    ,{
+                   "year":2019,
+                   "name": "MONSERRAT",
+                   "total": 334}
+                    ,{
+                   "year":2019,
+                   "name": "MONTE CASTRO",
+                   "total": 129}
+                    ,{
+                   "year":2019,
+                   "name": "NUEVA POMPEYA",
+                   "total": 171}
+                    ,{
+                   "year":2019,
+                   "name": "NUNEZ",
+                   "total": 247}
+                    ,{
+                   "year":2019,
+                   "name": "PALERMO",
+                   "total": 1357}
+                    ,{
+                   "year":2019,
+                   "name": "PARQUE AVELLANEDA",
+                   "total": 204}
+                    ,{
+                   "year":2019,
+                   "name": "PARQUE CHACABUCO",
+                   "total": 246}
+                    ,{
+                   "year":2019,
+                   "name": "PARQUE CHAS",
+                   "total": 101}
+                    ,{
+                   "year":2019,
+                   "name": "PARQUE PATRICIOS",
+                   "total": 188}
+                    ,{
+                   "year":2019,
+                   "name": "PATERNAL",
+                   "total": 168}
+                    ,{
+                   "year":2019,
+                   "name": "PUERTO MADERO",
+                   "total": 31}
+                    ,{
+                   "year":2019,
+                   "name": "RECOLETA",
+                   "total": 583}
+                    ,{
+                   "year":2019,
+                   "name": "RETIRO",
+                   "total": 204}
+                    ,{
+                   "year":2019,
+                   "name": "SAAVEDRA",
+                   "total": 287}
+                    ,{
+                   "year":2019,
+                   "name": "SAN CRISTOBAL",
+                   "total": 279}
+                    ,{
+                   "year":2019,
+                   "name": "SAN NICOLAS",
+                   "total": 403}
+                    ,{
+                   "year":2019,
+                   "name": "SAN TELMO",
+                   "total": 217}
+                    ,{
+                   "year":2019,
+                   "name": "VELEZ SARSFIELD",
+                   "total": 121}
+                    ,{
+                   "year":2019,
+                   "name": "VERSALLES",
+                   "total": 65}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA CRESPO",
+                   "total": 523}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA DEL PARQUE",
+                   "total": 183}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA DEVOTO",
+                   "total": 319}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA GRAL. MITRE",
+                   "total": 129}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA LUGANO",
+                   "total": 209}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA LURO",
+                   "total": 160}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA ORTUZAR",
+                   "total": 162}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA PUEYRREDON",
+                   "total": 200}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA REAL",
+                   "total": 83}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA RIACHUELO",
+                   "total": 57}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA SANTA RITA",
+                   "total": 189}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA SOLDATI",
+                   "total": 55}
+                    ,{
+                   "year":2019,
+                   "name": "VILLA URQUIZA",
+                   "total": 529}];
+
+         var data_year=[];
+
+
+
+		 function setDataTotal(){
+              data_total.forEach(function(dt){
+			            data_barrios.forEach(function(d) {
+			              if(dt.name==d.name){
+						     dt.value=dt.value + d.total;
+						  }
+
+			            });
+			  });
+
+		 }
+
+
+		 function getDataYear(year){
+		     l_return=[];
+
+			 data_barrios.forEach(function(d) {
+                if(d.year==year){
+				   var l_ret = {}
+				  l_ret.name=d.name
+				  l_ret.value=d.total
+				  l_return.push(l_ret);
+				}
+              });
+
+
+
+         return l_return;
+		 }
+
+
+
+	var dBarrios=[];
+	dBarrios[0]=[-58.4984314,-34.5922265,12,"AGRONOMIA"];
+	dBarrios[1]=[-58.4245577,-34.608493,12,"ALMAGRO"];
+	dBarrios[2]=[-58.411914,-34.6093046,12,"BALVANERA"];
+	dBarrios[3]=[-58.4020787,-34.6444877,12,"BARRACAS"];
+	dBarrios[4]=[-58.4682956,-34.5554332,12,"BELGRANO"];
+	dBarrios[5]=[-58.3704502,-34.6375704,12,"BOCA"];
+	dBarrios[6]=[-58.41879,-34.6302518,12,"BOEDO"];
+	dBarrios[7]=[-58.4422398,-34.6166197,12,"CABALLITO"];
+	dBarrios[8]=[-58.460402,-34.574632,12,"COLEGIALES"];
+	dBarrios[9]=[-58.3923897,-34.6257703,12,"CONSTITUCION"];
+	dBarrios[10]=[-58.4838226,-34.5601734,12,"COGHLAN"];
+	dBarrios[11]=[-58.4615831,-34.5880466,12,"CHACARITA"];
+	dBarrios[12]=[-58.4561244,-34.6353269,12,"FLORES"];
+	dBarrios[13]=[-58.4935067,-34.627801,12,"FLORESTA"];
+	dBarrios[14]=[-58.5250918,-34.6449673,12,"LINIERS"];
+	dBarrios[15]=[-58.5197911,-34.6588857,12,"MATADEROS"];
+	dBarrios[16]=[-58.3880978,-34.6125407,12,"MONSERRAT"];
+	dBarrios[17]=[-58.5058873,-34.61877,12,"MONTE CASTRO"];
+	dBarrios[18]=[-58.439436,-34.6500586,12,"NUEVA POMPEYA"];
+	dBarrios[19]=[-58.4786042,-34.5427008,12,"NUNEZ"];
+	dBarrios[20]=[-58.438525,-34.5733968,12,"PALERMO"];
+	dBarrios[21]=[-58.4704519,-34.5967146,12,"PATERNAL"];
+	dBarrios[22]=[-58.4104137,-34.6378184,12,"PARQUE PATRICIOS"];
+	dBarrios[23]=[-58.4885613,-34.5848616,12,"PARQUE CHAS"];
+	dBarrios[24]=[-58.4953383,-34.6507542,12,"PARQUE AVELLANEDA"];
+	dBarrios[25]=[-58.4476897,-34.6371574,12,"PARQUE CHACABUCO"];
+	dBarrios[26]=[-58.369838,-34.6135871,12,"PUERTO MADERO"];
+	dBarrios[27]=[-58.4138524,-34.5847911,12,"RECOLETA"];
+	dBarrios[28]=[-58.3855431,-34.5893799,12,"RETIRO"];
+	dBarrios[29]=[-58.5066694,-34.5543126,12,"SAAVEDRA"];
+	dBarrios[30]=[-58.4106115,-34.6242394,12,"SAN CRISTOBAL"];
+	dBarrios[31]=[-58.3890462,-34.6037886,12,"SAN NICOLAS"];
+	dBarrios[32]=[-58.3746354,-34.6225504,12,"SAN TELMO"];
+	dBarrios[33]=[-58.5283201,-34.6291545,12,"VERSALLES"];
+	dBarrios[34]=[-58.4925556,-34.6311961,12,"VELEZ SARSFIELD"];
+	dBarrios[35]=[-58.5229892,-34.6192206,12,"VILLA REAL"];
+	dBarrios[36]=[-58.4919581,-34.6163603,12,"VILLA SANTA RITA"];
+	dBarrios[37]=[-58.464475,-34.6679216,12,"VILLA SOLDATI"];
+	dBarrios[38]=[-58.5108044,-34.5818446,12,"VILLA PUEYRREDON"];
+	dBarrios[39]=[-58.5307422,-34.6005103,12,"VILLA DEVOTO"];
+	dBarrios[40]=[-58.5108488,-34.6350258,12,"VILLA LURO"];
+	dBarrios[41]=[-58.4456582,-34.5980347,12,"VILLA CRESPO"];
+	dBarrios[42]=[-58.4877992,-34.6058956,12,"VILLA DEL PARQUE"];
+	dBarrios[43]=[-58.4939557,-34.6748596,12,"VILLA LUGANO"];
+	dBarrios[44]=[-58.5062563,-34.5719246,12,"VILLA URQUIZA"];
+	dBarrios[45]=[-58.4781969,-34.6104898,12,"VILLA GRAL. MITRE"];
+	dBarrios[46]=[-58.481258,-34.6926627,12,"VILLA RIACHUELO"];
+	dBarrios[47]=[-58.4774425,-34.5814875,12,"VILLA ORTUZAR"];
+
+
+
+	colorPerYear = { "data": [
+								{"year": -1, "colors": [ "#FAFAFC", "#F4F2F8","#ECE9F4","#E4E0F0", "#DFD9EC","#D9D2E9","#D5CDE6","#CFC7E3","#CAC1DF","#C0B6D9"]},
+								{"year": 2016, "colors": [ "#F3F8FC", "#E2EEF8","#CFE2F4","#BCD6EF","#ADCEEB","#9FC5E8","#97BFE5","#8DB8E2","#83B0DE","#72A3D8"]},
+							    {"year": 2017, "colors": [ "#FEF9F3","#FDEFE1","#FCE5CE","#FBDBBA","#FAD3AB","#F9CB9C","#F8C694","#F7BE8A","#F6B880","#F5AC6E"]},
+								{"year": 2018, "colors": [ "#FCF3F3","#F9E0E0","#F5CCCC","#F0B8B8","#EDA8A8","#EA9999","#E79191","#E48686","#E17C7C","#DB6B6B" ]},
+								{"year": 2019, "colors": [ "#FAFCFA","#F4F9F2","#ECF5E9","#E4F0E0","#DFEDDA","#D9EAD3","#D5E7CE","#CFE4C8","#CAE1C2","#C0DBB7"]}
+					         ]
+							 };
+
+   function getConfYear(year){
+
+      for (i=0;colorPerYear.data.length!=i;i++){
+		      if(year==colorPerYear.data[i].year)
+			      return i;
+	    }
+      return -1;
+   }
+
+   function getVectorColor_2(labels,totales,year){
+      // Max
+	  total=parseFloat(totales[0]);
+    ind_year=getConfYear(year);
+
+	  for (i=0;totales.length!=i;i++){
+      color='';
+      ind_= Math.round((parseFloat(totales[i]) / total) * 9) ;
+		  color=colorPerYear.data[ind_year].colors[ind_];
+		  if (i==0)
+            str_='capa_'+labels[i]+'|'+color;
+          else
+            str_=str_+';'+'capa_'+labels[i]+'|'+color;
+      map.setPaintProperty('capa_'+labels[i], 'fill-color', color);
+	  }
+
+	return str_;
+   }
+
+   /*
+   function getVectorColor(labels,totales){
+      total=parseFloat(totales[0]);//totales.reduce(function(a, b) { return a + b; }, 0);
+      oSel=document.getElementById('oSelectTotales');
+      porc=0;
+      str_='';
+      porc_66=Math.round(total * parseFloat(0.66));
+      porc_33=Math.round(total * parseFloat(0.33));
+      colores=oSel[oSel.selectedIndex].value.split(',');
+      for (i=0;totales.length!=i;i++){
+        color=''
+        if(parseFloat(totales[i])<=porc_33)
+          color=colores[3];
+        else {
+          if(parseFloat(totales[i])<=porc_66)
+             color=colores[2];
+          else
+            color=colores[1];
+
+
+        }
+
+        if (i==0)
+         str_='capa_'+labels[i]+'|'+color;
+        else
+          str_=str_+';'+'capa_'+labels[i]+'|'+color;
+
+        porc=0;
+        map.setPaintProperty('capa_'+labels[i], 'fill-color', color);
+      }
+
+    return str_;
+   }
+   */
+
+   function interfMapBarrio(barrio){
+     fire_layer_click(barrio);
+	 // actua sobre el barrio en el mapa
+	 //alert(barrio);
+	// map.setPaintProperty('capa_'+barrio, 'fill-outline-color', '#cb3234');
+	// map.setPaintProperty('capa_'+barrio, 'line-width', 10);
+
+   }
+
+
+   function makeChart(year){
+      //inicializo el mapa
+	  map.flyTo({center:center,zoom: 10.5});
+	  var ctx = document.getElementById('canvas').getContext('2d');
+      var oCombo=document.getElementById('oSelectTotales');
+      var ind_=getConfYear(year);
+
+			var gradient = ctx.createLinearGradient(500, 0, 100, 0);
+                gradient.addColorStop(0, colorPerYear.data[ind_].colors[9]);
+				gradient.addColorStop(1, colorPerYear.data[ind_].colors[0]);
+
+
+      if(year!=-1){
+         var data = getDataYear(year);
+		 l_year=year;
+      }
+	  else{
+	       setDataTotal();
+            var data = data_total;
+			l_year='Totales';
+	   }
+
+
+	  data = data.sort(function (a, b) {
+                       return d3.descending(a.value, b.value);
+                   })
+
+    //data_year=data;
+    var Labels  = data.map(function(d) {return d.name});
+    var totales = data.map(function(d) {return d.value});
+
+
+			window.myHorizontalBar = new Chart(ctx, {
+				type: 'horizontalBar',
+				options: {
+						  'onClick' : function (evt, item) {
+								var barrio=item[0]['_model'].label;
+								interfMapBarrio(barrio);
+								//this.selectedDay = day
+								//this.renderHourlyBarChart();
+                          },
+						  maintainAspectRatio: false,
+						  title: {
+      							display: true,
+                                text: 'Cantidad de denuncias '+l_year
+                                 },
+                    legend: {
+
+							  display: false
+                          },
+
+						},
+
+			      scales: {
+							xAxes: [{
+								barThickness: 6,  // number (pixels) or 'flex'
+                                maxBarThickness: 8 // number (pixels)
+							}],
+							yAxes: [{
+									ticks: {
+										fontSize: 40
+									}
+								}]
+                 },
+				 data: {
+                       labels:Labels ,
+                        datasets: [{ backgroundColor: gradient,
+							         data: totales }]
+				},
+			});
+
+		// fin make a chart
+    data_year=getVectorColor_2(Labels,totales,year);
+    //year_indx=year;
+	//data_year=getVectorColor(Labels,totales);
+	//alert(data_year);
+    }
+
+
+
+
+    function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
+    }
+
+
+
+
+  /*
+    var oSelect_totales = document.getElementById('oSelectTotales');
+    oSelect_totales.addEventListener('change', function() {
+    var valor=oSelect_totales[oSelect_totales.selectedIndex].value.split(',')[0];
+    window.myHorizontalBar.destroy();
+    document.getElementById('oSelectBarrios').selectedIndex=0;
+    makeChart(valor);
+
+ 	},false);
+*/
+		//alert(window.myHorizontalBar.data.datasets[0].fillColor);
+    //alert(window.myHorizontalBar.defaults.global.elements.length)
+		 //map.setPaintProperty('capa_'+Labels[0], 'fill-color', window.myHorizontalBar.data.datasets[0].backgroundColor);

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es-es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Visualizacion/</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' /> <style> </style>
+	<link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      body { margin:0; padding:0;font-family: "Arial", sans-serif;}
+      #map { width:550px; height: 630px;}
+
+        .bar {fill: #5f89ad;}
+        .axis {font-size: 10px;}
+        .axis path,
+        .axis line {fill: none;display: none;}
+        .label {font-size: 11px;}
+        a:hover {cursor:'hand'}
+
+	</style>
+</head>
+ <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+ <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+ <script src="./js/jquery-1.12.4.min.js"></script> <!-- Importante llamar antes a jQuery para que funcione bootstrap.min.js   -->
+ <script src="./js/bootstrap.min.js"></script> <!-- Llamamos al JavaScript de Bootstrap -->
+<!-- <script src="./js/prueba_points.js" charset="utf-8"></script> -->
+  <script src="./js/Chart.min.js"></script>
+  <script src="./js/utils.js"></script>
+ <script>
+
+     var host=''  
+
+
+     function getYearCombo(){
+       oSelect=document.getElementById("oSelectTotales");
+       return oSelect[oSelect.selectedIndex].innerText;
+     }
+
+     function setBarrioCombo(barrio){
+	   oSelect=document.getElementById("oSelectBarrios");
+	   var l_return =0;
+		for (i=0;i!=oSelect.length ;i++)
+          {
+              if(oSelect[i].innerText==barrio){
+				 l_return=i;
+		     }
+	     }
+	   oSelect.selectedIndex=l_return;
+	 }
+
+
+	 function getYear(){
+	    vars=getUrlVars();
+        var valor = vars['p_YEAR'];
+        return valor
+	 }
+
+
+	 function getBarrio(){
+       vars=getUrlVars();
+       var valor = vars['p_BARRIO'];
+       return valor
+     }
+
+     function getBarrioCombo(){
+	    oSelect=document.getElementById("oSelectBarrios");
+		return oSelect[oSelect.selectedIndex].innerText;
+	 }
+
+
+	 function getParamsReload(){
+	    oSelect=document.getElementById("oSelectBarrios");
+		var url=getHost()+'/geo/'+ getYear() +'/' +oSelect[oSelect.selectedIndex].innerText;
+	    return url;
+	 }
+
+
+	 function getParamsUrl(){
+      var url=getHost()+'/geo/'+ getYear() +'/' +getBarrio();
+      return url
+     }
+
+     function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        host=window.location.href.substring(0,25)
+		return vars;
+    }
+
+    var color_circle='';
+
+
+    function setYear(){
+	   oSelect=document.getElementById("oSelectTotales");
+     l_year=getYear();
+     if(l_year!='-1'){
+    		 for (i=0;i!=oSelect.length ;i++ )
+        {
+                if(oSelect[i].innerText==l_year){
+    			      oSelect.selectedIndex=i;
+                //color_circle=oSelect[i].value.split(',')[1];
+                //alert(color_circle);
+                }
+    		 }
+         oSelect.disabled=true;
+     }
+     else{
+         oSelect.options.length = 0;
+
+         var opt = document.createElement('option');
+         opt.value = '';
+         opt.innerHTML = '';
+         oSelect.appendChild(opt);
+
+         for (i=1;i!=6;i++ )
+         {
+           var opt = document.createElement('option');
+           opt.value = i;
+           opt.innerHTML = 'Topico N:'+i;
+           oSelect.appendChild(opt);
+         }
+         oSelect.selectedIndex  = 0;
+         oSelect.addEventListener('change', function() {
+              getGeoTopic();
+      	},false);
+
+
+
+     }
+	  }
+
+	  var init_load=false;
+
+	  function init(){
+			try {
+				  vars=getUrlVars();
+				  var valor = decodeURI(vars['p_BARRIO']);
+                  setBarrioCombo(valor);
+				  setYear();
+				  
+
+				  fire_layer_click(valor);
+				  init_load=true;
+
+
+
+			}
+			catch(error) {
+                      console.error(error);
+					  alert('entre por catch de inicio '+error);
+			}
+		  }
+
+      function getHost(){
+		  return host
+	  }
+
+      function fire_layer_click(capa){
+		  oSelect=document.getElementById("oSelectBarrios");
+		  var x=0;
+		  var y=0;
+      try
+      {
+        window.myPolarBar.destroy();
+		 window.myHorizontalBar.destroy();
+      }
+      catch(error) {
+      }
+      hacerPeticionAjax(host+'/topicPolar/'+getYear()+'/'+getBarrioDef(), getTotalesTopic); //polar
+      hacerPeticionAjax(host+'/tot/'+getYear()+'/'+getBarrioDef(), createLinearBar);        //Bar
+
+      for (i=0;i!=oSelect.length ;i++ )
+          {
+              if(oSelect[i].innerText==capa){
+					valor=oSelect[i].value.replace("[","");
+				      valor=valor.replace("]","");
+				      val=valor.split(",");
+				      x=parseFloat(val[0]);
+			          y=parseFloat(val[1]);
+				      zoom=13;
+			          //oSelect.selectedIndex=i;
+
+				        if(init_load){
+                          map.getSource('puntos').setData(getParamsReload());
+                         //map.setPaintProperty('puntos', 'circle-color', color_circle)
+                }
+
+
+
+				  }
+			  }
+
+
+		   if(x!=0){  
+			 map.flyTo({center:[x, y],zoom: zoom});
+			 // vuelve el color a la normalidad 
+             
+		   }
+		}
+
+    function getGeoTopic(topico,color){
+      if(getBarrioCombo()!='TODAS')
+	   var url=getHost()+'/geo/'+ getYear() +'/' +getBarrioCombo() + '/' + topico;
+      else
+       var url=getHost()+'/geo/'+ getYear() +'/-1/' + topico;
+
+	  map.getSource('puntos').setData(url);
+      map.setPaintProperty('puntos', 'circle-color', color);
+	
+    }
+
+     function goTopics(){
+	   location.href='./topics.html';
+	 }
+
+
+
+	 function hacerPeticionAjax(url, callback) { // callback es solo el nombre de la variable
+     $.ajax(url, {
+        // ...
+        success: callback,
+        // ...
+          });
+     }
+
+</script>
+<body class="" onload="init()">
+<div id="site" style="display: block; height: 823px;" class="">
+
+		  <div id="" class="container">
+				 <nav class="navbar navbar-default">
+					  <div class="container-fluid">
+						<div class="navbar-header">
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <a class="navbar-brand" href="#">Denuncias</a>
+						</div>
+
+
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						  <ul class="nav navbar-nav">
+
+							<li>
+							  <a href="../" style="cursor:hand">Analisis Totales</a>
+							</li>
+							<li><a onclick="goTopics()">Analisis de Topicos <span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="#" style="cursor:hand">Analisis Geo</a></li>
+						  </ul>
+
+						</div><!-- /.navbar-collapse  -->
+					  </div><!-- /.container-fluid  -->
+					</nav>
+
+                   <nav aria-label="breadcrumb">
+					  <ol class="breadcrumb">
+						<li class="breadcrumb-item active" aria-current="page">Visualizador:</li>
+					    <select id="oSelectBarrios">
+				        <option value="" selected></option>
+						<option value="-1">TODAS</option>
+						<option value="[-58.4984314,-34.5922265,12]">AGRONOMIA</option>
+						<option value="[-58.4245577,-34.608493,12]">ALMAGRO</option>
+						<option value="[-58.411914,-34.6093046,12]">BALVANERA</option>
+						<option value="[-58.4020787,-34.6444877,12]">BARRACAS</option>
+						<option value="[-58.4682956,-34.5554332,12]">BELGRANO</option>
+						<option value="[-58.3704502,-34.6375704,12]">BOCA</option>
+						<option value="[-58.41879,-34.6302518,12]">BOEDO</option>
+						<option value="[-58.4422398,-34.6166197,12]">CABALLITO</option>
+						<option value="[-58.460402,-34.574632,12]">COLEGIALES</option>
+						<option value="[-58.3923897,-34.6257703,12]">CONSTITUCION</option>
+						<option value="[-58.4838226,-34.5601734,12]">COGHLAN</option>
+						<option value="[-58.4615831,-34.5880466,12]">CHACARITA</option>
+						<option value="[-58.4561244,-34.6353269,12]">FLORES</option>
+						<option value="[-58.4935067,-34.627801,12]">FLORESTA</option>
+                        <option value="[-58.5250918,-34.6449673,12]">LINIERS</option>
+						<option value="[-58.5197911,-34.6588857,12]">MATADEROS</option>
+						<option value="[-58.3880978,-34.6125407,12]">MONSERRAT</option>
+						<option value="[-58.5058873,-34.61877,12]">MONTE CASTRO</option>
+						<option value="[-58.439436,-34.6500586,12]">NUEVA POMPEYA</option>
+						<option value="[-58.4786042,-34.5427008,12]">NUNEZ</option>
+						<option value="[-58.438525,-34.5733968,12]">PALERMO</option>
+						<option value="[-58.4704519,-34.5967146,12]">PATERNAL</option>
+						<option value="[-58.4104137,-34.6378184,12]">PARQUE PATRICIOS</option>
+						<option value="[-58.4885613,-34.5848616,12]">PARQUE CHAS</option>
+						<option value="[-58.4953383,-34.6507542,12]">PARQUE AVELLANEDA</option>
+						<option value="[-58.4476897,-34.6371574,12]">PARQUE CHACABUCO</option>
+						<option value="[-58.369838,-34.6135871,12]">PUERTO MADERO</option>
+						<option value="[-58.4138524,-34.5847911,12]">RECOLETA</option>
+						<option value="[-58.3855431,-34.5893799,12]">RETIRO</option>
+						<option value="[-58.5066694,-34.5543126,12]">SAAVEDRA</option>
+						<option value="[-58.4106115,-34.6242394,12]">SAN CRISTOBAL</option>
+						<option value="[-58.3890462,-34.6037886,12]">SAN NICOLAS</option>
+						<option value="[-58.3746354,-34.6225504,12]">SAN TELMO</option>
+						<option value="[-58.5283201,-34.6291545,12]">VERSALLES</option>
+						<option value="[-58.4925556,-34.6311961,12]">VELEZ SARSFIELD</option>
+						<option value="[-58.5229892,-34.6192206,12]">VILLA REAL</option>
+						<option value="[-58.4919581,-34.6163603,12]">VILLA SANTA RITA</option>
+						<option value="[-58.464475,-34.6679216,12]">VILLA SOLDATI</option>
+						<option value="[-58.5108044,-34.5818446,12]">VILLA PUEYRREDON</option>
+						<option value="[-58.5307422,-34.6005103,12]">VILLA DEVOTO</option>
+						<option value="[-58.5108488,-34.6350258,12]">VILLA LURO</option>
+						<option value="[-58.4456582,-34.5980347,12]">VILLA CRESPO</option>
+						<option value="[-58.4877992,-34.6058956,12]">VILLA DEL PARQUE</option>
+						<option value="[-58.4939557,-34.6748596,12]">VILLA LUGANO</option>
+						<option value="[-58.5062563,-34.5719246,12]">VILLA URQUIZA</option>
+						<option value="[-58.4781969,-34.6104898,12]">VILLA GRAL. MITRE</option>
+						<option value="[-58.481258,-34.6926627,12]">VILLA RIACHUELO</option>
+						<option value="[-58.4774425,-34.5814875,12]">VILLA ORTUZAR</option>
+				</select>
+				<select id="oSelectTotales">
+					<option value='-1'></option>
+					<option value='2016,#6c7b95,#b2d6cc,#c7f0db'>2016</option>
+					<option value='2017,#43c6ac,#bcecad,#f8ffae'>2017</option>
+					<option value='2018,#00b09b,#4dbd6b,#96c93d'>2018</option>
+					<option value='2019,#bb377d,#d77cad,#fbd3e9'>2019</option>
+                </select>
+					  </ol>
+				  </nav>
+
+
+
+
+
+					         <div id='map'></div>
+	                         <div id="container_" style=" position: absolute; top: 100px; left: 700px;">
+		                            <canvas id="horizontal" width="500" height="300" style=""></canvas> 
+									<canvas id="polar-chart" width="500" height="350" style=""></canvas>
+	                         </div>
+
+
+		</div>
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGF1bGlub21hcHBpbmdnaXMiLCJhIjoiY2l4aGd2dWlnMDA0aDJ6cWZnZGF6ZjA1bCJ9.0mFYYZmOnoWq66-0S0O6-Q';
+var center = [-58.4230501,-34.6179314];
+var map = window.map = new mapboxgl.Map({
+			container: 'map',
+			zoom: 10.5,
+			center: center,
+			style: 'mapbox://styles/mapbox/streets-v10'
+			});
+//'http://127.0.0.1:5000/geo/2016'
+ map.on('style.load', function () {
+    map.addSource("puntos", {
+        "type": "geojson",
+        'data': getParamsUrl()
+    }
+	);
+
+    map.addLayer({
+        "id": "puntos",
+        "interactive": true,
+        "type": "circle",
+        "source": "puntos",
+        "paint": {
+            "circle-radius": 4,
+            "circle-color": '#3887be'
+        }
+    });
+
+
+});
+
+
+  var oSelect = document.getElementById('oSelectBarrios');
+   oSelect.addEventListener('change', function() {
+         var valor=oSelect[oSelect.selectedIndex].innerText;
+          map.setPaintProperty('puntos', 'circle-color', '#629DC8');
+		  if(valor != "TODAS"){
+			  fire_layer_click(valor);
+          }
+		  else{
+			// combo barrio todos
+			map.flyTo({center:center,zoom: 10.5});
+			 try
+				  {
+					 window.myPolarBar.destroy();
+					 window.myHorizontalBar.destroy();
+				  }
+				  catch(error) {
+				  }
+				  hacerPeticionAjax(getHost()+'/topicPolar/'+getYear()+'/-1', getTotalesTopic); //polar
+				  hacerPeticionAjax(getHost()+'/tot/'+getYear()+'/-1', createLinearBar);        //Bar
+		}
+
+
+
+	},false);
+
+
+
+
+	function getTotalesTopic(data) {
+
+    var totales_topic=[0,0,0,0,0];
+
+    for(i=0;i<=data.length;i++){
+		   totales_topic[i]=parseInt(data[i]);
+		}
+
+    window.myPolarBar=new Chart(document.getElementById("polar-chart"), {
+         type: 'polarArea',
+         data: {
+           labels: ["Topico N:1", "Topico N:2", "Topico N:3", "Topico N:4", "Topico N:5"],
+           datasets: [
+           {
+             label: "Cantidad Topicos",
+             backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+             data: totales_topic
+           }
+           ]
+         },
+         options: {
+           title: {
+           display: true,
+           text: 'Muestreo por Topicos'
+           },
+		   'onClick' : function (evt, item) {
+                        try{
+						   var color = ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"];
+						   var topic=item[0]._model.label.replace("Topico N:","");
+						    getGeoTopic(topic,color[parseInt(topic - 1)]);
+						   
+						}
+						catch(error){
+						}
+                    }
+         }
+       });
+      }
+
+ 
+   function createLinearBar(data){
+       var totales_mes=[0,0,0,0,0,0,0,0,0,0,0,0];
+
+        for(i=0;i<=data.length;i++){
+		   totales_mes[i]=parseInt(data[i]);
+		}
+
+            
+			var MeSeData = {
+				labels: ["Ene","Feb",'Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+				datasets: [
+					{
+						label: "Evolucion Mensual :" +getYear() ,
+						backgroundColor: '#629DC8',
+						data: totales_mes
+					}]
+			};
+
+		window.myHorizontalBar = new Chart(document.getElementById("horizontal"), {
+			type: 'horizontalBar',
+			data: MeSeData,
+			options: {
+				scales: {
+					yAxes: [{
+						stacked: false
+					}]
+				}
+
+			}
+		});
+   }
+
+
+   function getBarrioDef(){
+      l_barrio=getBarrioCombo();
+	  l_barrio_ = getBarrio();
+
+      if(l_barrio=="")
+	     return l_barrio_;
+	  else
+	    return l_barrio;
+   }
+
+</script>
+</body>
+</html>
